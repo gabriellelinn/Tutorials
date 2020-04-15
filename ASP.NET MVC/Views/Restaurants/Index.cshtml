@@ -1,0 +1,22 @@
+﻿@model IEnumerable<OdeToFood.Data.Models.Restaurant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Restaurants</h2>
+The total amount of existing restaurants is @Model.Count()
+<br />
+<br />
+<p>
+    @Html.ActionLink("Add New Restaurant", "Create")
+</p>
+
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_RestaurantSummary", item);
+}
+
+
+
